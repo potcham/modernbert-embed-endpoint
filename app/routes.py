@@ -12,4 +12,5 @@ class TextRequest(BaseModel):
 @router.post("/embed")
 async def get_embedding(request: TextRequest):
     embedding = service.get_embeddings(request.text)
+    # print(type(embedding), len(embedding))
     return {"embedding": embedding}

@@ -9,5 +9,5 @@ class EmbeddingService:
         # inputs = self.tokenizer(text, return_tensors="pt", padding=True, truncation=True)
         # outputs = self.model(**inputs)
         outputs = self.model.encode([text])
-        print(outputs, outputs.shape)
-        return list(outputs[0]) # .last_hidden_state.mean(dim=1).detach().tolist()
+        # print(outputs, outputs.shape)
+        return outputs[0].tolist() # .last_hidden_state.mean(dim=1).detach().tolist()
